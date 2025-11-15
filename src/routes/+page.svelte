@@ -1,70 +1,111 @@
 <script lang="ts">
-	import Navbar from '../components/Navbar.svelte';
 	import Card from '../components/Card.svelte';
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 
-	let search = '';
-	let cards = [
+	const totalRevenue = 128000;
+	const totalProjects = 24;
+
+	const ongoing = [
 		{
-			image: 'https://source.unsplash.com/random/400x300?finance',
-			title: 'Group Savings',
-			description: 'Manage your group savings with transparency and ease.',
-			totalReceived: 1000,
-			progress: 45
+			id: '1',
+			image: 'https://example.com/images/project1.jpg',
+			title: 'Clean Water Initiative',
+			description: 'Providing clean water to rural communities.',
+			totalReceived: 5400,
+			progress: 64
 		},
 		{
-			image: 'https://source.unsplash.com/random/400x300?community',
-			title: 'Community Projects',
-			description: 'Support local community projects for sustainable growth.',
-			totalReceived: 5000,
-			progress: 80
+			id: '2',
+			image: 'https://example.com/images/project1.jpg',
+			title: 'School Renovation',
+			description: 'Renovating classrooms and providing desks.',
+			totalReceived: 3200,
+			progress: 47
 		},
 		{
-			image: 'https://source.unsplash.com/random/400x300?money',
-			title: 'Loan Requests',
-			description: 'Track and approve loan requests within your chama.',
-			totalReceived: 2000,
-			progress: 60
+			id: '3',
+			image: 'https://example.com/images/project1.jpg',
+			title: 'Healthcare Access',
+			description: 'Mobile clinics for remote villages.',
+			totalReceived: 7700,
+			progress: 82
 		},
 		{
-			image: 'https://source.unsplash.com/random/400x300?investment',
-			title: 'Investments',
-			description: 'Grow your funds through collective investments.',
-			totalReceived: 3000,
-			progress: 25
+			id: '4',
+			image: 'https://example.com/images/project1.jpg',
+			title: 'Tree Planting Campaign',
+			description: 'Planting 200,000 trees by 2026.',
+			totalReceived: 2100,
+			progress: 29
 		}
 	];
 
-	$: filteredCards = cards.filter((card) =>
-		card.title.toLowerCase().includes(search.toLowerCase())
-	);
+	async function viewProject(id: string) {
+		goto(`/projects/${id}`);
+	}
 
-	const handleView = (title: string) => {
-		alert(`Viewing ${title}`);
-	};
+	function navigateToProject() {
+		goto(resolve(`/projects`));
+	}
 </script>
 
-<Navbar />
+<div class="min-h-screen bg-[#f7f9fc] p-6">
+	<!-- HEADER -->
+	<div class="mb-8 flex items-center justify-between">
+		<div>
+			<h1 class="text-2xl font-semibold text-gray-800">Dashboard Overview</h1>
+			<p class="text-sm text-gray-500">Wednesday, January 5, 2026</p>
+		</div>
 
-<main class="min-h-screen bg-gray-50 p-6">
-	<div class="mx-auto max-w-7xl">
-		<input
-			type="text"
-			placeholder="Search..."
-			bind:value={search}
-			class="mb-6 w-full rounded-xl border p-3 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none md:w-1/2"
-		/>
+		<button class="rounded-xl bg-black px-4 py-2 text-white shadow"> Export Report </button>
+	</div>
+
+	<!-- TOP STATS -->
+	<div class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-4">
+		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
+			<p class="text-sm text-gray-500">Total Revenue</p>
+			<h2 class="mt-2 text-3xl font-bold">${totalRevenue}</h2>
+			<p class="mt-1 text-xs text-green-600">▲ +7.15% vs last period</p>
+		</div>
+
+		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
+			<p class="text-sm text-gray-500">Total Projects</p>
+			<h2 class="mt-2 text-3xl font-bold">{totalProjects}</h2>
+			<p class="mt-1 text-xs text-green-600">▲ +1.2% vs last period</p>
+		</div>
+
+		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
+			<p class="text-sm text-gray-500">Ongoing</p>
+			<h2 class="mt-2 text-3xl font-bold">{ongoing.length}</h2>
+			<p class="mt-1 text-xs text-red-600">▼ -0.8% vs last period</p>
+		</div>
+
+		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
+			<p class="text-sm text-gray-500">Completion Rate</p>
+			<h2 class="mt-2 text-3xl font-bold">78.8%</h2>
+			<p class="mt-1 text-xs text-green-600">▲ +3.2% vs last period</p>
+		</div>
+	</div>
+
+	<!-- ONGOING PROJECTS -->
+	<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
+		<div class="mb-4 flex items-center justify-between">
+			<h2 class="text-xl font-semibold text-gray-800">Ongoing Projects</h2>
+			<button on:click={() => navigateToProject()} class="font-medium text-blue-600 cursor-pointer">View all</button>
+		</div>
 
 		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-			{#each filteredCards as card, i (card.title + i)}
+			{#each ongoing as project (project.id)}
 				<Card
-					image={card.image}
-					title={card.title}
-					description={card.description}
-					totalReceived={card.totalReceived}
-					progress={card.progress}
-					onView={() => handleView(card.title)}
+					image={project.image}
+					title={project.title}
+					description={project.description}
+					totalReceived={project.totalReceived}
+					progress={project.progress}
+					onView={() => viewProject(project.id)}
 				/>
 			{/each}
 		</div>
 	</div>
-</main>
+</div>

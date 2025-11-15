@@ -7,19 +7,20 @@
 
 	<ul class="flex gap-6">
 		{#each ['home', 'map', 'settings'] as tab, i (tab + i)}
-			<li
-				class="cursor-pointer capitalize transition hover:text-blue-400"
-				class:selected={active === tab}
-				on:click={() => (active = tab)}
-			>
-				{tab}
-			</li>
+			<button on:click={() => (active = tab)}>
+				<li
+					class="cursor-pointer capitalize transition hover:text-blue-400"
+					class:selected={active === tab}
+				>
+					{tab}
+				</li>
+			</button>
 		{/each}
 	</ul>
 </nav>
 
 <style>
 	.selected {
-		color: #60a5fa; /* Tailwind blue-400 */
+		color: #60a5fa;
 	}
 </style>
