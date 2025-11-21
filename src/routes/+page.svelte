@@ -57,8 +57,6 @@
 			<h1 class="text-2xl font-semibold text-gray-800">Dashboard Overview</h1>
 			<p class="text-sm text-gray-500">Wednesday, January 5, 2026</p>
 		</div>
-
-		<button class="rounded-xl bg-black px-4 py-2 text-white shadow"> Export Report </button>
 	</div>
 
 	<!-- TOP STATS -->
