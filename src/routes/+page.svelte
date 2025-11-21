@@ -50,7 +50,7 @@
 	}
 </script>
 
-<div class="min-h-screen bg-[#f7f9fc] p-6">
+<div class="min-h-screen bg-[#f7f9fc] p-2 md:p-6">
 	<!-- HEADER -->
 	<div class="mb-8 flex items-center justify-between">
 		<div>
@@ -87,7 +87,7 @@
 	</div>
 
 	<!-- ONGOING PROJECTS -->
-	<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
+	<div class="rounded-2xl border border-gray-100 bg-white p-4 md:p-6 shadow">
 		<div class="mb-4 flex items-center justify-between">
 			<h2 class="text-xl font-semibold text-gray-800">Ongoing Projects</h2>
 			<button on:click={() => navigateToProject()} class="font-medium text-blue-600 cursor-pointer">View all</button>

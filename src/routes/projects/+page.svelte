@@ -108,7 +108,7 @@
 	}
 </script>
 
-<main class="min-h-screen bg-[#f7f9fc] p-6">
+<main class="min-h-screen bg-[#f7f9fc] p-2 md:p-6">
 	<div class="mb-6">
 		<h1 class="text-2xl font-bold text-gray-800">All Projects</h1>
 		<p class="text-sm text-gray-500">Browse all public development projects</p>
