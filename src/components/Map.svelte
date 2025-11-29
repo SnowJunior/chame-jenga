@@ -6,7 +6,6 @@
 	export let lng: number | null = null;
 	export let zoom: number = 13;
 
-	// Optional markers array, each with lat, lng and optional popupText
 	export let markers: { lat: number; lng: number; popupText?: string }[] = [];
 
 	let mapContainer: HTMLDivElement;
@@ -22,12 +21,11 @@
 		// Determine center of the map
 		let center: [number, number];
 		if (markers.length > 0) {
-			// Use the first marker or calculate center from all markers (simple approach: first marker)
 			center = [markers[0].lat, markers[0].lng];
 		} else if (lat !== null && lng !== null) {
 			center = [lat, lng];
 		} else {
-			center = [0, 0]; // fallback if nothing is provided
+			center = [0, 0];
 		}
 
 		L = (await import('leaflet')).default;
@@ -39,12 +37,10 @@
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 
-		// Clear any existing markers just in case (useful if reactive updates added later)
 		leafletMarkers.forEach((marker) => marker.remove());
 		leafletMarkers = [];
 
 		if (markers.length > 0) {
-			// Add all markers from the markers array
 			leafletMarkers = markers.map(({ lat, lng, popupText }) => {
 				const marker = L.marker([lat, lng]).addTo(map!);
 				if (popupText) {
@@ -53,13 +49,11 @@
 				return marker;
 			});
 		} else if (lat !== null && lng !== null) {
-			// Add single marker
 			leafletMarkers.push(L.marker([lat, lng]).addTo(map));
 		}
 
 		await tick();
 
-		// Fix map size if container was hidden initially
 		setTimeout(() => {
 			map?.invalidateSize();
 		}, 100);
