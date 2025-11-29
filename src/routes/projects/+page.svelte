@@ -122,7 +122,7 @@
 			class="w-full rounded-xl border border-gray-200 p-3 focus:ring focus:ring-blue-200 focus:outline-none"
 		/>
 
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+		<!-- <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 			<div>
 				<label class="text-sm text-gray-600">Category</label>
 				<select
@@ -157,7 +157,7 @@
 					<option value="funding-low">Funding (Low → High)</option>
 				</select>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 	{#if loading}

@@ -41,6 +41,7 @@
 		"vitest": "^4.0.5"
 	},
 	"dependencies": {
+		"leaflet": "^1.9.4",
 		"svelte-google-maps-api": "^0.1.5"
 	}
 }
