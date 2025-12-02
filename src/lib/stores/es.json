@@ -1,0 +1,45 @@
+{
+	"charset": "utf-8",
+	"headers": {
+		"Project-Id-Version": "chama-jenga",
+		"POT-Creation-Date": "",
+		"PO-Revision-Date": "",
+		"Last-Translator": "",
+		"Language-Team": "Spanish",
+		"Language": "es",
+		"MIME-Version": "1.0",
+		"Content-Type": "text/plain; charset=UTF-8",
+		"Content-Transfer-Encoding": "8bit",
+		"X-Generator": "Manual"
+	},
+	"translations": {
+		"": {
+			"": {
+				"msgid": "",
+				"msgstr": [
+					"Project-Id-Version: chama-jenga\nPOT-Creation-Date: \nPO-Revision-Date: \nLast-Translator: \nLanguage-Team: Spanish\nLanguage: es\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nX-Generator: Manual\n"
+				]
+			},
+			"Dashboard Overview": {
+				"msgid": "Dashboard Overview",
+				"msgstr": ["Resumen del Panel"]
+			},
+			"Total Revenue": {
+				"msgid": "Total Revenue",
+				"msgstr": ["Ingresos Totales"]
+			},
+			"Total Projects": {
+				"msgid": "Total Projects",
+				"msgstr": ["Proyectos Totales"]
+			},
+			"Ongoing": {
+				"msgid": "Ongoing",
+				"msgstr": ["En Curso"]
+			},
+			"Completion Rate": {
+				"msgid": "Completion Rate",
+				"msgstr": ["Tasa de Finalización"]
+			}
+		}
+	}
+}

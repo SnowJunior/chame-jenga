@@ -1,0 +1,31 @@
+# Spanish translations for chama-jenga
+# Copyright (C) 2024
+# This file is distributed under the same license as the chama-jenga package.
+msgid ""
+msgstr ""
+"Project-Id-Version: chama-jenga\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2024-01-01 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Dashboard Overview"
+msgstr "Resumen del Panel"
+
+msgid "Total Revenue"
+msgstr "Ingresos Totales"
+
+msgid "Total Projects"
+msgstr "Proyectos Totales"
+
+msgid "Ongoing"
+msgstr "En Curso"
+
+msgid "Completion Rate"
+msgstr "Tasa de Finalización"
+

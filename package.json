@@ -38,10 +38,11 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.46.1",
 		"vite": "^7.1.10",
-		"vitest": "^4.0.5"
+		"vitest": "^4.0.5",
+		"node-gettext": "^3.0.0",
+    "gettext-parser": "^8.0.0"
 	},
 	"dependencies": {
-		"leaflet": "^1.9.4",
-		"svelte-google-maps-api": "^0.1.5"
+		"leaflet": "^1.9.4"
 	}
 }
