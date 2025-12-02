@@ -1,0 +1,36 @@
+# French translations for chama-jenga
+# Demo catalog to prove PO-driven translations work
+msgid ""
+msgstr ""
+"Project-Id-Version: chama-jenga\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 12:00+0000\n"
+"PO-Revision-Date: 2025-12-02 10:00+0000\n"
+"Last-Translator: Demo Translator <demo@example.com>\n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Dashboard Overview"
+msgstr "Vue d'ensemble du tableau de bord"
+
+msgid "Total Revenue"
+msgstr "Revenus totaux"
+
+msgid "Total Projects"
+msgstr "Projets totaux"
+
+msgid "Ongoing"
+msgstr "En cours"
+
+msgid "Completion Rate"
+msgstr "Taux d'achèvement"
+
+msgid "Ongoing Projects"
+msgstr "Projets en cours"
+
+msgid "View all"
+msgstr "Voir tout"
+

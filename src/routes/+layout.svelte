@@ -33,7 +33,7 @@
 
 <!-- Mobile top bar -->
 <div class="flex items-center bg-gray-900 p-4 text-white lg:hidden">
-	<button on:click={toggleMenu} class="text-2xl">☰</button>
+	<button onclick={toggleMenu} class="text-2xl">☰</button>
 	<h1 class="ml-4 text-xl font-semibold">PublicGov</h1>
 </div>
 
@@ -44,8 +44,8 @@
 			role="button"
 			tabindex="0"
 			class="fixed inset-0 z-20 bg-black/40 backdrop-blur-sm lg:hidden"
-			on:click={closeMenu}
-			on:keydown={(e) => e.key === 'Enter' && closeMenu()}
+			onclick={closeMenu}
+			onkeydown={(e) => e.key === 'Enter' && closeMenu()}
 		></div>
 	{/if}
 

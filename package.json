@@ -13,7 +13,8 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "npm run test:unit -- --run",
+		"i18n:build": "node tools/po-to-json.cjs"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.0",
@@ -28,7 +29,9 @@
 		"eslint": "^9.38.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.12.4",
+		"gettext-parser": "^8.0.0",
 		"globals": "^16.4.0",
+		"node-gettext": "^3.0.0",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.7.1",
@@ -38,9 +41,7 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.46.1",
 		"vite": "^7.1.10",
-		"vitest": "^4.0.5",
-		"node-gettext": "^3.0.0",
-    "gettext-parser": "^8.0.0"
+		"vitest": "^4.0.5"
 	},
 	"dependencies": {
 		"leaflet": "^1.9.4"

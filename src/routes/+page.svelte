@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Card from '../components/Card.svelte';
 	import { goto } from '$app/navigation';
-	import { translationManager as gt } from '$lib/stores/i18n.ts';
+	import { translationManager as gt } from '$lib/stores/i18n';
 	import { resolve } from '$app/paths';
+
 
 	const totalRevenue = 128000;
 	const totalProjects = 24;
@@ -50,6 +51,7 @@
 		goto(resolve(`/projects`));
 	}
 </script>
+
 
 <div class="min-h-screen bg-[#f7f9fc] p-2 md:p-6">
 	<!-- HEADER -->

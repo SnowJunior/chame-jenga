@@ -1,0 +1,53 @@
+{
+	"charset": "utf-8",
+	"headers": {
+		"Project-Id-Version": "chama-jenga",
+		"POT-Creation-Date": "2024-01-01 12:00+0000",
+		"PO-Revision-Date": "2025-12-02 10:00+0000",
+		"Last-Translator": "Demo Translator <demo@example.com>",
+		"Language-Team": "French",
+		"Language": "fr",
+		"MIME-Version": "1.0",
+		"Content-Type": "text/plain; charset=UTF-8",
+		"Content-Transfer-Encoding": "8bit"
+	},
+	"translations": {
+		"": {
+			"": {
+				"msgid": "",
+				"msgstr": [
+					"Project-Id-Version: chama-jenga\\nReport-Msgid-Bugs-To: \\nPOT-Creation-Date: 2024-01-01 12:00+0000\\nPO-Revision-Date: 2025-12-02 10:00+0000\\nLast-Translator: Demo Translator <demo@example.com>\\nLanguage-Team: French\\nLanguage: fr\\nMIME-Version: 1.0\\nContent-Type: text/plain; charset=UTF-8\\nContent-Transfer-Encoding: 8bit\\n"
+				]
+			},
+			"Dashboard Overview": {
+				"msgid": "Dashboard Overview",
+				"msgstr": ["Vue d'ensemble du tableau de bord"]
+			},
+			"Total Revenue": {
+				"msgid": "Total Revenue",
+				"msgstr": ["Revenus totaux"]
+			},
+			"Total Projects": {
+				"msgid": "Total Projects",
+				"msgstr": ["Projets totaux"]
+			},
+			"Ongoing": {
+				"msgid": "Ongoing",
+				"msgstr": ["En cours"]
+			},
+			"Completion Rate": {
+				"msgid": "Completion Rate",
+				"msgstr": ["Taux d'achèvement"]
+			},
+			"Ongoing Projects": {
+				"msgid": "Ongoing Projects",
+				"msgstr": ["Projets en cours"]
+			},
+			"View all": {
+				"msgid": "View all",
+				"msgstr": ["Voir tout"]
+			}
+		}
+	}
+}
+
