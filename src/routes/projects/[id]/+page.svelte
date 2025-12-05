@@ -89,9 +89,11 @@
 				</div>
 			</div>
 
-			<div class="h-[400px] rounded-2xl border border-gray-100 bg-white p-6 shadow">
+			<div class="flex flex-col h-[500px] rounded-2xl border border-gray-100 bg-white p-6 shadow">
 				<h2 class="mb-3 text-xl font-semibold text-gray-800">Project Location</h2>
-				<Map lat={project.lat} lng={project.lng} zoom={12} markers={[]} />
+				<div class="flex-1 rounded-xl overflow-hidden">
+					<Map lat={project.lat} lng={project.lng} zoom={12} markers={[]} />
+				</div>
 			</div>
 		</div>
 
@@ -103,7 +105,7 @@
 				</p>
 
 				<button
-					class="w-full rounded-xl bg-blue-600 py-3 font-medium text-white transition hover:bg-blue-700"
+					class="w-full rounded-xl bg-blue-600 py-3 font-medium text-white transition hover:bg-blue-700 cursor-pointer"
 					on:click={contribute}
 				>
 					Contribute

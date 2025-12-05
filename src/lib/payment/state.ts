@@ -53,6 +53,15 @@ export function complete2FA(success: boolean) {
 	}
 }
 
+export function goBack() {
+	state.update((s) => {
+		if (s.step === "enter_details") {
+			return { step: "choose_method", method: undefined };
+		}
+		return s;
+	});
+}
+
 export function onClose() {
 	state.set({ step: "choose_method" });
 }

@@ -5,7 +5,7 @@
 	import ToastContainer from '../components/Toasts/GlobalToast.svelte';
 
 	import { beforeNavigate } from '$app/navigation';
-	import 'leaflet/dist/leaflet.css';
+	import 'maplibre-gl/dist/maplibre-gl.css';
 
 	let { children } = $props();
 
