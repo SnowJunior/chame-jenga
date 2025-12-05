@@ -3,13 +3,24 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import Sidebar from '../components/Sidebar.svelte';
 	import ToastContainer from '../components/Toasts/GlobalToast.svelte';
-
+	import LocaleSelector from '../components/LocaleSelector.svelte';
+	import { locale } from '$lib/stores/locale';
 	import { beforeNavigate } from '$app/navigation';
 	import 'maplibre-gl/dist/maplibre-gl.css';
 
-	let { children } = $props();
+	let { children, data }: {
+		children: any;
+		data?: { locale?: string };
+	} = $props();
 
 	let isOpen = $state(false);
+
+	// Initialize locale from server data
+	$effect(() => {
+		if (data?.locale && data.locale !== $locale) {
+			locale.set(data.locale as 'es' | 'fr');
+		}
+	});
 
 	const toggleMenu = () => {
 		isOpen = !isOpen;
@@ -32,9 +43,14 @@
 </svelte:head>
 
 <!-- Mobile top bar -->
-<div class="flex items-center bg-gray-900 p-4 text-white lg:hidden">
-	<button onclick={toggleMenu} class="text-2xl">☰</button>
-	<h1 class="ml-4 text-xl font-semibold">PublicGov</h1>
+<div class="flex items-center justify-between bg-gray-900 p-4 text-white lg:hidden">
+	<div class="flex items-center">
+		<button onclick={toggleMenu} class="text-2xl">☰</button>
+		<h1 class="ml-4 text-xl font-semibold">PublicGov</h1>
+	</div>
+	<div class="lg:hidden">
+		<LocaleSelector />
+	</div>
 </div>
 
 <div class="relative flex min-h-screen">

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { derived } from 'svelte/store'; // 1. FIX: Destructure prop and avoid $derived() wrapper
+	import { derived } from 'svelte/store';
+	import LocaleSelector from './LocaleSelector.svelte';
 
-	let { isOpen } = $props(); // Current route store
+	let { isOpen } = $props();
 
 	const currentRoute = derived(page, ($page) => $page.url.pathname);
 
@@ -30,6 +31,9 @@ duration-300 lg:translate-x-0 {isOpen ? 'translate-x-0' : ''}
 "
 >
 	<h1 class="mb-8 hidden text-2xl font-semibold lg:block">PublicGov</h1>
+	<div class="mb-6 hidden lg:block">
+		<LocaleSelector />
+	</div>
 	<ul class="space-y-4">
 		{#each navItems as item (item.name)}
 			<li>
