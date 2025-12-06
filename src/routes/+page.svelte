@@ -4,6 +4,10 @@
 	import { translationManager as gt } from '$lib/stores/i18n';
 	import { locale } from '$lib/stores/locale';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/stores';
+
+	// Get locale from page data for SSR compatibility
+	$: currentLocale = $page.data?.locale || $locale || 'es';
 
 
 	const totalRevenue = 128000;
@@ -58,7 +62,7 @@
 	<!-- HEADER -->
 	<div class="mb-8 flex items-center justify-between">
 		<div>
-			<h1 class="text-2xl font-semibold text-gray-800">{$locale && gt.gettext("Dashboard Overview")}</h1>
+			<h1 class="text-2xl font-semibold text-gray-800">{gt.gettext("Dashboard Overview")}</h1>
 			<p class="text-sm text-gray-500">Wednesday, January 5, 2026</p>
 		</div>
 	</div>
@@ -66,25 +70,25 @@
 	<!-- TOP STATS -->
 	<div class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-4">
 		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-			<p class="text-sm text-gray-500">{$locale && gt.gettext("Total Revenue")}</p>
+			<p class="text-sm text-gray-500">{gt.gettext("Total Revenue")}</p>
 			<h2 class="mt-2 text-3xl font-bold">${totalRevenue}</h2>
 			<p class="mt-1 text-xs text-green-600">▲ +7.15% vs last period</p>
 		</div>
 
 		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-			<p class="text-sm text-gray-500">{$locale && gt.gettext("Total Projects")}</p>
+			<p class="text-sm text-gray-500">{gt.gettext("Total Projects")}</p>
 			<h2 class="mt-2 text-3xl font-bold">{totalProjects}</h2>
 			<p class="mt-1 text-xs text-green-600">▲ +1.2% vs last period</p>
 		</div>
 
 		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-			<p class="text-sm text-gray-500">{$locale && gt.gettext("Ongoing")}</p>
+			<p class="text-sm text-gray-500">{gt.gettext("Ongoing")}</p>
 			<h2 class="mt-2 text-3xl font-bold">{ongoing.length}</h2>
 			<p class="mt-1 text-xs text-red-600">▼ -0.8% vs last period</p>
 		</div>
 
 		<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-			<p class="text-sm text-gray-500">{$locale && gt.gettext("Completion Rate")}</p>
+			<p class="text-sm text-gray-500">{gt.gettext("Completion Rate")}</p>
 			<h2 class="mt-2 text-3xl font-bold">78.8%</h2>
 			<p class="mt-1 text-xs text-green-600">▲ +3.2% vs last period</p>
 		</div>
@@ -93,8 +97,8 @@
 	<!-- ONGOING PROJECTS -->
 	<div class="rounded-2xl border border-gray-100 bg-white p-4 md:p-6 shadow">
 		<div class="mb-4 flex items-center justify-between">
-			<h2 class="text-xl font-semibold text-gray-800">{$locale && gt.gettext("Ongoing Projects")}</h2>
-			<button on:click={() => navigateToProject()} class="font-medium text-blue-600 cursor-pointer">{$locale && gt.gettext("View all")}</button>
+			<h2 class="text-xl font-semibold text-gray-800">{gt.gettext("Ongoing Projects")}</h2>
+			<button on:click={() => navigateToProject()} class="font-medium text-blue-600 cursor-pointer">{gt.gettext("View all")}</button>
 		</div>
 
 		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

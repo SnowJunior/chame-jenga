@@ -7,7 +7,15 @@ export async function load({ cookies }) {
         serverI18n.ensureLocale(currentLocale);
     } catch (err) {
         console.error("[i18n:server] Failed loading locale", err);
-        serverI18n.ensureLocale("es");
+        // Try to fallback to default locale
+        try {
+            if (currentLocale !== "es") {
+                serverI18n.ensureLocale("es");
+            }
+        } catch (fallbackErr) {
+            console.error("[i18n:server] Failed loading fallback locale", fallbackErr);
+            // Continue anyway - translations will just return keys
+        }
     }
 
     return {
