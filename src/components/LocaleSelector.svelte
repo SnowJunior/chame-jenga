@@ -15,6 +15,7 @@
 		try {
 			// Update local store immediately for instant UI update
 			locale.set(newLocale);
+			console.log('Locale changed to:', newLocale, 'Current $locale:', $locale);
 
 			// Update cookie via API
 			const response = await fetch('/api/locale', {
@@ -29,6 +30,8 @@
 				// Revert on error
 				locale.set(previousLocale);
 				console.error('Failed to change locale');
+			} else {
+				console.log('Locale cookie updated successfully');
 			}
 			// No page reload needed - reactivity handles the updates
 		} catch (error) {

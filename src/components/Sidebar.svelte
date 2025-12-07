@@ -2,16 +2,18 @@
 	import { page } from '$app/stores';
 	import { derived } from 'svelte/store';
 	import LocaleSelector from './LocaleSelector.svelte';
+	import { t } from '$lib/stores/i18n';
 
 	let { isOpen } = $props();
 
 	const currentRoute = derived(page, ($page) => $page.url.pathname);
 
-	const navItems = [
-		{ name: 'Dashboard', path: '/', icon: '📊' },
-		{ name: 'Projects', path: '/projects', icon: '📁' },
-		{ name: 'Map View', path: '/map', icon: '🗺️' }
-	]; // Auto-close drawer on mobile
+	// Reactive navigation items that update when locale changes
+	const navItems = $derived([
+		{ name: $t('Dashboard'), path: '/', icon: '📊' },
+		{ name: $t('Projects'), path: '/projects', icon: '📁' },
+		{ name: $t('Map View'), path: '/map', icon: '🗺️' }
+	]);
 
 	const handleNavClick = () => {
 		if (window.innerWidth < 1024) {

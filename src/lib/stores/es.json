@@ -39,6 +39,106 @@
 			"Completion Rate": {
 				"msgid": "Completion Rate",
 				"msgstr": ["Tasa de Finalización"]
+			},
+			"Ongoing Projects": {
+				"msgid": "Ongoing Projects",
+				"msgstr": ["Proyectos en Curso"]
+			},
+			"View all": {
+				"msgid": "View all",
+				"msgstr": ["Ver todo"]
+			},
+			"Dashboard": {
+				"msgid": "Dashboard",
+				"msgstr": ["Panel"]
+			},
+			"Projects": {
+				"msgid": "Projects",
+				"msgstr": ["Proyectos"]
+			},
+			"Map View": {
+				"msgid": "Map View",
+				"msgstr": ["Vista de Mapa"]
+			},
+			"All Projects": {
+				"msgid": "All Projects",
+				"msgstr": ["Todos los Proyectos"]
+			},
+			"Browse all public development projects": {
+				"msgid": "Browse all public development projects",
+				"msgstr": ["Explorar todos los proyectos de desarrollo público"]
+			},
+			"Search projects...": {
+				"msgid": "Search projects...",
+				"msgstr": ["Buscar proyectos..."]
+			},
+			"No projects found.": {
+				"msgid": "No projects found.",
+				"msgstr": ["No se encontraron proyectos."]
+			},
+			"Prev": {
+				"msgid": "Prev",
+				"msgstr": ["Anterior"]
+			},
+			"Next": {
+				"msgid": "Next",
+				"msgstr": ["Siguiente"]
+			},
+			"Project Overview": {
+				"msgid": "Project Overview",
+				"msgstr": ["Resumen del Proyecto"]
+			},
+			"Location": {
+				"msgid": "Location",
+				"msgstr": ["Ubicación"]
+			},
+			"Total Budget": {
+				"msgid": "Total Budget",
+				"msgstr": ["Presupuesto Total"]
+			},
+			"Received": {
+				"msgid": "Received",
+				"msgstr": ["Recibido"]
+			},
+			"Completion": {
+				"msgid": "Completion",
+				"msgstr": ["Finalización"]
+			},
+			"Progress": {
+				"msgid": "Progress",
+				"msgstr": ["Progreso"]
+			},
+			"Project Location": {
+				"msgid": "Project Location",
+				"msgstr": ["Ubicación del Proyecto"]
+			},
+			"Support This Project": {
+				"msgid": "Support This Project",
+				"msgstr": ["Apoyar Este Proyecto"]
+			},
+			"Your contribution helps accelerate project completion.": {
+				"msgid": "Your contribution helps accelerate project completion.",
+				"msgstr": ["Tu contribución ayuda a acelerar la finalización del proyecto."]
+			},
+			"Contribute": {
+				"msgid": "Contribute",
+				"msgstr": ["Contribuir"]
+			},
+			"Recent Contributions": {
+				"msgid": "Recent Contributions",
+				"msgstr": ["Contribuciones Recientes"]
+			},
+			"Name": {
+				"msgid": "Name",
+				"msgstr": ["Nombre"]
+			},
+			"Amount": {
+				"msgid": "Amount",
+				"msgstr": ["Cantidad"]
+			},
+			"Date": {
+				"msgid": "Date",
+				"msgstr": ["Fecha"]
 			}
 		}
 	}

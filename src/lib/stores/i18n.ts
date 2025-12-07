@@ -1,32 +1,45 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { browser } from '$app/environment';
-import { locale } from "./locale.ts";
-import { get } from "svelte/store";
-import { clientTranslations } from "./i18n.client.ts";
+import { locale } from './locale.ts';
+import { derived } from 'svelte/store';
+import { clientTranslations } from './i18n.client.ts';
 
-// Create a reactive translation function that works on both client and server
-function gettext(key: string): string {
-    if (!browser) {
-        // Server-side: return key as fallback
-        // Server-side rendering should use server translations via +page.server.ts
-        // But we need to return something safe here
-        return key;
-    }
-    
-    // Client-side: use reactive locale store
-    try {
-        const currentLocale = get(locale) || 'es'; // Default to 'es' if not set
-        const translations = clientTranslations[currentLocale]?.translations?.[""] || {};
-        const translation = translations[key];
-        return translation?.msgstr?.[0] || key;
-    } catch (error) {
-        // Fallback if store is not available
-        return key;
-    }
+/**
+ * Reactive translation store that automatically updates when locale changes
+ * Use this in components: $t('Translation Key')
+ */
+export const t = derived(locale, ($locale) => {
+	const currentLocale = ($locale || 'es') as 'es' | 'fr';
+	const translations = (clientTranslations[currentLocale]?.translations?.[''] || {}) as Record<string, { msgid: string; msgstr: string[] }>;
+	
+	return (key: string): string => {
+		if (!browser) {
+			// Server-side: return key as fallback
+			return key;
+		}
+		
+		const translation = translations[key];
+		return translation?.msgstr?.[0] || key;
+	};
+});
+
+/**
+ * Non-reactive translation function for use outside of Svelte components
+ * For use in regular TypeScript/JavaScript files
+ */
+export function gettext(key: string): string {
+	if (!browser) {
+		return key;
+	}
+	
+	// This is not reactive - use $t in Svelte components instead
+	const currentLocale = 'es'; // fallback
+	const translations = (clientTranslations[currentLocale as 'es' | 'fr']?.translations?.[''] || {}) as Record<string, { msgid: string; msgstr: string[] }>;
+	const translation = translations[key];
+	return translation?.msgstr?.[0] || key;
 }
 
-// Translation manager for use in .svelte files
-// Works on both client and server (server returns key, client returns translation)
+// Legacy export for backwards compatibility
 export const translationManager = {
-    gettext
+	gettext
 };

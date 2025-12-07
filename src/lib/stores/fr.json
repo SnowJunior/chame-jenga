@@ -46,6 +46,98 @@
 			"View all": {
 				"msgid": "View all",
 				"msgstr": ["Voir tout"]
+			},
+			"Dashboard": {
+				"msgid": "Dashboard",
+				"msgstr": ["Tableau de bord"]
+			},
+			"Projects": {
+				"msgid": "Projects",
+				"msgstr": ["Projets"]
+			},
+			"Map View": {
+				"msgid": "Map View",
+				"msgstr": ["Vue de la carte"]
+			},
+			"All Projects": {
+				"msgid": "All Projects",
+				"msgstr": ["Tous les projets"]
+			},
+			"Browse all public development projects": {
+				"msgid": "Browse all public development projects",
+				"msgstr": ["Parcourir tous les projets de développement public"]
+			},
+			"Search projects...": {
+				"msgid": "Search projects...",
+				"msgstr": ["Rechercher des projets..."]
+			},
+			"No projects found.": {
+				"msgid": "No projects found.",
+				"msgstr": ["Aucun projet trouvé."]
+			},
+			"Prev": {
+				"msgid": "Prev",
+				"msgstr": ["Précédent"]
+			},
+			"Next": {
+				"msgid": "Next",
+				"msgstr": ["Suivant"]
+			},
+			"Project Overview": {
+				"msgid": "Project Overview",
+				"msgstr": ["Aperçu du projet"]
+			},
+			"Location": {
+				"msgid": "Location",
+				"msgstr": ["Emplacement"]
+			},
+			"Total Budget": {
+				"msgid": "Total Budget",
+				"msgstr": ["Budget total"]
+			},
+			"Received": {
+				"msgid": "Received",
+				"msgstr": ["Reçu"]
+			},
+			"Completion": {
+				"msgid": "Completion",
+				"msgstr": ["Achèvement"]
+			},
+			"Progress": {
+				"msgid": "Progress",
+				"msgstr": ["Progrès"]
+			},
+			"Project Location": {
+				"msgid": "Project Location",
+				"msgstr": ["Emplacement du projet"]
+			},
+			"Support This Project": {
+				"msgid": "Support This Project",
+				"msgstr": ["Soutenir ce projet"]
+			},
+			"Your contribution helps accelerate project completion.": {
+				"msgid": "Your contribution helps accelerate project completion.",
+				"msgstr": ["Votre contribution aide à accélérer l'achèvement du projet."]
+			},
+			"Contribute": {
+				"msgid": "Contribute",
+				"msgstr": ["Contribuer"]
+			},
+			"Recent Contributions": {
+				"msgid": "Recent Contributions",
+				"msgstr": ["Contributions récentes"]
+			},
+			"Name": {
+				"msgid": "Name",
+				"msgstr": ["Nom"]
+			},
+			"Amount": {
+				"msgid": "Amount",
+				"msgstr": ["Montant"]
+			},
+			"Date": {
+				"msgid": "Date",
+				"msgstr": ["Date"]
 			}
 		}
 	}

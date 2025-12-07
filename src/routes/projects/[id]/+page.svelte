@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PaymentModal from '../../../components/Modal/PaymentModal.svelte';
 	import Map from '../../../components/Map.svelte';
+	import { t } from '$lib/stores/i18n';
 
 	const project = {
 		id: 'p-001',
@@ -50,34 +51,34 @@
 	<div class="mx-auto mt-10 grid max-w-6xl gap-8 px-6 md:grid-cols-3">
 		<div class="space-y-8 md:col-span-2">
 			<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-				<h2 class="mb-3 text-xl font-semibold text-gray-800">Project Overview</h2>
+				<h2 class="mb-3 text-xl font-semibold text-gray-800">{$t('Project Overview')}</h2>
 				<p class="leading-relaxed text-gray-600">{project.description}</p>
 
 				<div class="mt-6 grid grid-cols-2 gap-4">
 					<div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
-						<p class="text-sm text-gray-500">Location</p>
+						<p class="text-sm text-gray-500">{$t('Location')}</p>
 						<p class="font-semibold text-gray-800">{project.location}</p>
 					</div>
 
 					<div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
-						<p class="text-sm text-gray-500">Total Budget</p>
+						<p class="text-sm text-gray-500">{$t('Total Budget')}</p>
 						<p class="font-semibold text-gray-800">KSh {project.totalBudget.toLocaleString()}</p>
 					</div>
 
 					<div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
-						<p class="text-sm text-gray-500">Received</p>
+						<p class="text-sm text-gray-500">{$t('Received')}</p>
 						<p class="font-semibold text-green-700">KSh {project.totalReceived.toLocaleString()}</p>
 					</div>
 
 					<div class="rounded-xl border border-gray-200 bg-gray-50 p-4">
-						<p class="text-sm text-gray-500">Completion</p>
+						<p class="text-sm text-gray-500">{$t('Completion')}</p>
 						<p class="font-semibold text-blue-700">{project.progress}%</p>
 					</div>
 				</div>
 
 				<div class="mt-6">
 					<div class="mb-1 flex justify-between text-sm text-gray-500">
-						<span>Progress</span>
+						<span>{$t('Progress')}</span>
 						<span>{project.progress}%</span>
 					</div>
 					<div class="h-2 w-full rounded-full bg-gray-200">
@@ -90,7 +91,7 @@
 			</div>
 
 			<div class="flex flex-col h-[500px] rounded-2xl border border-gray-100 bg-white p-6 shadow">
-				<h2 class="mb-3 text-xl font-semibold text-gray-800">Project Location</h2>
+				<h2 class="mb-3 text-xl font-semibold text-gray-800">{$t('Project Location')}</h2>
 				<div class="flex-1 rounded-xl overflow-hidden">
 					<Map lat={project.lat} lng={project.lng} zoom={12} markers={[]} />
 				</div>
@@ -99,28 +100,28 @@
 
 		<div class="space-y-8">
 			<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-				<h3 class="mb-4 text-lg font-semibold text-gray-800">Support This Project</h3>
+				<h3 class="mb-4 text-lg font-semibold text-gray-800">{$t('Support This Project')}</h3>
 				<p class="mb-4 text-sm text-gray-600">
-					Your contribution helps accelerate project completion.
+					{$t('Your contribution helps accelerate project completion.')}
 				</p>
 
 				<button
 					class="w-full rounded-xl bg-blue-600 py-3 font-medium text-white transition hover:bg-blue-700 cursor-pointer"
 					on:click={contribute}
 				>
-					Contribute
+					{$t('Contribute')}
 				</button>
 			</div>
 
 			<div class="rounded-2xl border border-gray-100 bg-white p-6 shadow">
-				<h3 class="mb-4 text-lg font-semibold text-gray-800">Recent Contributions</h3>
+				<h3 class="mb-4 text-lg font-semibold text-gray-800">{$t('Recent Contributions')}</h3>
 
 				<table class="w-full text-sm">
 					<thead>
 						<tr class="border-b text-left text-gray-500">
-							<th class="py-2">Name</th>
-							<th class="py-2">Amount</th>
-							<th class="py-2">Date</th>
+							<th class="py-2">{$t('Name')}</th>
+							<th class="py-2">{$t('Amount')}</th>
+							<th class="py-2">{$t('Date')}</th>
 						</tr>
 					</thead>
 					<tbody>

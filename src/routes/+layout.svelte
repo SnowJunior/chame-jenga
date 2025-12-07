@@ -15,10 +15,15 @@
 
 	let isOpen = $state(false);
 
-	// Initialize locale from server data
+	// Initialize locale from server data on first load only
+	// Use a flag to ensure we only initialize once
+	let localeInitialized = $state(false);
+	
 	$effect(() => {
-		if (data?.locale && data.locale !== $locale) {
+		if (data?.locale && !localeInitialized) {
+			// Only initialize once on first load
 			locale.set(data.locale as 'es' | 'fr');
+			localeInitialized = true;
 		}
 	});
 

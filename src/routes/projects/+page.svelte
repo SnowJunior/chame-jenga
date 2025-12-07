@@ -2,6 +2,7 @@
 	import Card from '../../components/Card.svelte';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { t } from '$lib/stores/i18n';
 
 	let projects = [
 		{
@@ -110,14 +111,14 @@
 
 <main class="min-h-screen bg-[#f7f9fc] p-2 md:p-6">
 	<div class="mb-6">
-		<h1 class="text-2xl font-bold text-gray-800">All Projects</h1>
-		<p class="text-sm text-gray-500">Browse all public development projects</p>
+		<h1 class="text-2xl font-bold text-gray-800">{$t('All Projects')}</h1>
+		<p class="text-sm text-gray-500">{$t('Browse all public development projects')}</p>
 	</div>
 
 	<div class="mb-8 space-y-4 rounded-2xl border border-gray-100 bg-white p-6 shadow">
 		<input
 			type="text"
-			placeholder="Search projects..."
+			placeholder={$t('Search projects...')}
 			bind:value={searchQuery}
 			class="w-full rounded-xl border border-gray-200 p-3 focus:ring focus:ring-blue-200 focus:outline-none"
 		/>
@@ -186,7 +187,7 @@
 		</div>
 
 		{#if paginated().length === 0}
-			<p class="mt-10 text-center text-gray-500">No projects found.</p>
+			<p class="mt-10 text-center text-gray-500">{$t('No projects found.')}</p>
 		{/if}
 
 		{#if totalPages() > 1}
@@ -194,7 +195,7 @@
 				<button
 					class="rounded-xl bg-gray-200 px-4 py-2 disabled:opacity-50"
 					on:click={() => (page = Math.max(1, page - 1))}
-					disabled={page === 1}>Prev</button
+					disabled={page === 1}>{$t('Prev')}</button
 				>
 
 				<span class="px-4 py-2">{page} / {totalPages()}</span>
@@ -202,7 +203,7 @@
 				<button
 					class="rounded-xl bg-gray-200 px-4 py-2 disabled:opacity-50"
 					on:click={() => (page = Math.min(totalPages(), page + 1))}
-					disabled={page === totalPages()}>Next</button
+					disabled={page === totalPages()}>{$t('Next')}</button
 				>
 			</div>
 		{/if}
